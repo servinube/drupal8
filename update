@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker-compose -f dist.yml pull
+docker-compose -f dist.yml up -d

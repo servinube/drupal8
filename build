@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker-compose -f dist.yml build drupal
+docker push dockerserver/customers:xxx
+
+if [ "$1" == "--update" ]; then
+  ssh dockerserver.com -C "cd xxx && ./update"
+fi

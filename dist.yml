@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  drupal:
+    build: .
+    image: dockerserver/customers:xxx
+    volumes:
+      - ./data/private:/var/www/private
+      - ./data/default:/var/www/web/sites/default
+    environment:
+      VIRTUAL_HOST: xxx.com, www.xxx.com
+      DRUPAL_URL: https://www.xxx.com
+      DRUPAL_ENV: live
+    links:
+      - mysql
+    network_mode: bridge
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: cbiYudbJ9RLOnLdI
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: xQcmVQvI0YyHLqQX
+      MYSQL_DATABASE: drupal8
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    network_mode: bridge
