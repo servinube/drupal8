@@ -16,4 +16,9 @@ app/web/sites/simpletest
 .idea
 
 # Custom directories
-/data
+/data/mysql
+/data/private
+/data/default/files
+
+# Temporal https://github.com/hechoendrupal/DrupalConsole/issues/2982
+/app/console
