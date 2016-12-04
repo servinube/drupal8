@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo "Missing parameter!"
+    exit 1
+fi
+
+docker-compose run --rm composer install
+docker-compose up -d drupal
+docker-compose exec drupal drupal site:install --db-type=mysql --db-port=3306 --db-host=mysql --db-name=drupal8 --db-user=drupal --db-pass=xQcmVQvI0YyHLqQX
+chmod ug+w data/default data/default/settings.php data/default/services.yml

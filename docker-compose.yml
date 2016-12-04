@@ -31,4 +31,6 @@ services:
       service: composer
       file: ~/Projects/docker-compose.yml
     volumes:
-     - ./app:/app
+      - ./app:/app
+      - ./data/private:/private
+      - ./data/default:/app/web/sites/default
