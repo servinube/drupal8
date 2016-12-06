@@ -6,7 +6,7 @@ services:
     image: dockerserver/customers:xxx
     volumes:
       - ./data/private:/var/www/private
-      - ./data/default:/var/www/web/sites/default
+      - ./data/files:/var/www/web/sites/default/files
     environment:
       VIRTUAL_HOST: xxx.com, www.xxx.com
       DRUPAL_URL: https://www.xxx.com

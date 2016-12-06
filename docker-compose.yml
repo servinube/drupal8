@@ -6,7 +6,7 @@ services:
     volumes:
       - ./app:/var/www
       - ./data/private:/var/www/private
-      - ./data/default:/var/www/web/sites/default
+      - ./data/files:/var/www/web/sites/default/files
     environment:
       VIRTUAL_HOST: localhost
       DRUPAL_URL: http://localhost
@@ -33,4 +33,3 @@ services:
     volumes:
       - ./app:/app
       - ./data/private:/private
-      - ./data/default:/app/web/sites/default

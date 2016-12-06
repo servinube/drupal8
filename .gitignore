@@ -7,7 +7,7 @@ app/web/themes/contrib
 app/web/profiles/contrib
 
 # Ignore Drupal's file directory
-app/web/sites/default
+app/web/sites/default/files
 
 # Ignore SimpleTest multi-site environment.
 app/web/sites/simpletest
@@ -16,9 +16,7 @@ app/web/sites/simpletest
 .idea
 
 # Custom directories
-/data/mysql
-/data/private
-/data/default/files
+/data
 
 
 # Temporal https://github.com/hechoendrupal/DrupalConsole/issues/2982
