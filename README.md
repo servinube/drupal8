@@ -9,6 +9,8 @@ How to start your Drupal 8 project in minutes with Docker:
 
 También falta el parámetro de install, ver si puedo usarlo para cambiar localhost por el nombre del proyecto
 Esto, falta el proxy corriendo :)
+También el yml de distribución, que tiene xxx como nombre del proyecto, además que haría falta el usuario de Docker Hub
+de la persona que instala.
 
 ## What to do next
 
@@ -17,3 +19,17 @@ If you are using Chrome you are lucky because you can use yourprojec.dev without
 You only need to edit docker-compose.yml and change localhost in environment section to yourprojec.dev.
 
 After save the changes you can run `docker-compose up -d drupal` and browse to http://yourprojec.dev to see your site.
+
+## Copying to production
+
+Adapt the file dist.yml to your Docker Hub account. Run `./build` to create the Docker image from your source code.
+
+You need to upload the folowing files to your server:
+
+- dist.yml
+- dist/update
+- ¿La carpeta data? o será mejor instalar desde cero e importar la configuración exportada previamente
+- `drush sql-dump --result-file=../private/initialdump.sql`
+
+Then SSH to your server and run `./update`.
+`drush sqlq --file=../private/initialdump.sql`
